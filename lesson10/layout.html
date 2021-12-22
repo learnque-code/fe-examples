@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<header>
+    <title>grid</title>
+    <style>
+        .container {
+            position: relative;
+            height: 30px;
+        }
+
+        .container:hover .box {
+            left: 400px;
+        }
+
+        .box {
+            position: absolute;
+            left: 0;
+            height: 30px;
+            width: 30px;
+            background-color: hsl(130, 50%, 50%);
+            border-radius: 5px;
+        }
+
+        .box--linear {
+            transition: all 2s linear;
+        }
+
+        .box--ease {
+            transition: all 2s ease;
+        }
+
+        .box--steps-5 {
+            transition: all 1s steps(3);
+        }
+
+
+        div + div {
+            margin-top: 20px;
+        }
+
+    </style>
+</header>
+<body>
+<div class="container">
+    <div class="box"></div>
+</div>
+<div class="container">
+    <div class="box box--linear"></div>
+</div>
+<div class="container">
+    <div class="box box--ease"></div>
+</div>
+<div class="container">
+    <div class="box box--steps-5"></div>
+</div>
+
+</body>
+
+</html>

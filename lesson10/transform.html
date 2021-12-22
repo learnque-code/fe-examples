@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Transform</title>
+    <style>
+        img.chicken {
+            max-width: 100%;
+        }
+
+        .wrapper {
+            background-color: hsl(210, 80%, 20%);
+            padding: 3em;
+        }
+
+        .card {
+            padding: 0.5em;
+            background-color: white;
+            margin: 0 auto;
+            max-width: 150px;
+            transition: all 1s ease;
+        }
+
+        .card--rotate:hover {
+            transform: rotate(25deg);
+        }
+
+        .card--move:hover {
+            transform: translate(150px, 20px);
+        }
+
+        .card--scale:hover {
+            transform: scale(0.8);
+        }
+
+        .card--skew:hover {
+            transform: skew(15deg);
+        }
+
+        .origin--right-center {
+            transform-origin: right center;
+        }
+
+        .origin--right-bottom {
+            transform-origin: right bottom;
+        }
+
+        .wrapper + .wrapper {
+            margin-top: 2em;
+        }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+    <div class="card card--rotate origin--right-center">
+        <img class="chicken" src="./images/chicken1.jpeg" alt="Chicken"/>
+    </div>
+</div>
+
+<div class="wrapper">
+    <div class="card card--move origin--right-bottom">
+        <img class="chicken" src="./images/chicken1.jpeg" alt="Chicken"/>
+    </div>
+</div>
+
+<div class="wrapper">
+    <div class="card card--scale">
+        <img class="chicken" src="./images/chicken1.jpeg" alt="Chicken"/>
+    </div>
+</div>
+
+<div class="wrapper">
+    <div class="card card--skew">
+        <img class="chicken" src="./images/chicken1.jpeg" alt="Chicken"/>
+    </div>
+</div>
+
+</body>
+</html>

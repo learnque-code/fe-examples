@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+    <style>
+        html, body {
+            width: 100vw;
+            min-height: 100vh;
+            margin: 2px;
+            padding: 0;
+        }
+
+        body {
+            display: grid;
+            grid-template-rows: 150px auto 100px;
+            grid-template-columns: minmax(200px, 3fr) 9fr;
+            grid-template-areas: "nav header"
+                       "nav    content"
+                       "footer    footer";
+
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+
+        header {
+            grid-area: header;
+        }
+        nav {
+            grid-area: nav;
+        }
+
+
+
+        body > * {
+            border: 1px solid green;
+        }
+
+        main {
+            grid-area: content;
+        }
+
+        footer {
+            grid-area: footer;
+        }
+
+        .aside {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+        }
+
+    </style>
+</head>
+<body>
+<header>Header
+
+</header>
+<nav>Nav
+    <div class="aside">
+        Kaz
+    </div>
+</nav>
+<main>
+
+</main>
+<footer>Footer</footer>
+</body>

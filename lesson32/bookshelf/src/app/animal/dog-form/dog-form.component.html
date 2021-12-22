@@ -1,0 +1,10 @@
+<p>Please enter dog name!</p>
+
+<form [formGroup]="dogForm" (ngSubmit)="onSubmit()">
+  <label for="name">Name: </label>
+  <input id="name" type="text" formControlName="dogName">
+  <label for="type">Type: </label>
+  <input id="type" type="text" formControlName="dogType">
+  <button type="submit" [disabled]="!dogForm.valid">Submit</button>
+</form>
+

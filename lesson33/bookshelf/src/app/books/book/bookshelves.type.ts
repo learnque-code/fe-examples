@@ -1,0 +1,2 @@
+export type Bookshelves = string[];
+

@@ -1,0 +1,52 @@
+/* More universal approach */
+:root {
+    box-sizing: border-box;
+}
+
+*,
+::before,
+::after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: #eee;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+header {
+    color: #ffffff;
+    background-color: #0072b0;
+    border-radius: 5px;
+}
+
+.wrapper {
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
+.container {
+    display: table;
+    border-spacing: 20px 0;
+}
+
+main {
+    /*float: left;*/
+    /*display: block;*/
+    display: table-cell;
+    width: 70%;
+    padding: 15px;
+    /* IE have a bug. main displayed as inline not block :) */
+    background-color: #ffffff;
+    border-radius: 5px;
+}
+
+.sidebar {
+    display: table-cell;
+    /*float: left;*/
+    width: 30%;
+    padding: 15px;
+    background-color: #ffffff;
+    border-radius: 5px;
+    /*margin-left: 1%;*/
+}

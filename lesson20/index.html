@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Fetching and aggregating</title>
+    <meta content="Fetching and aggregating" name="description">
+</head>
+<body>
+<script>
+    function outputResult(book) {
+        const d = document.createElement('div');
+        d.innerText = book.title;
+        document.body.appendChild(d);
+    }
+
+    async function getAllBooks() {
+        const responseForSubject = await fetch('http://localhost:3010/subjects');
+        const subjects = await responseForSubject.json();
+        let books = [];
+
+        for (const subject of subjects) {
+            const responseForBook = await fetch(`http://localhost:3010/books?subjects_like=${subject}`);
+            const book = await responseForBook.json();
+            books = [...books, ...book];
+        }
+
+        books.forEach(outputResult);
+    }
+
+    // getAllBooks();
+
+
+
+    async function getBooks() {
+        const response = await fetch('http://localhost:3010/subjects');
+        const subjects = await response.json();
+        subjects.map(async (subject) => {
+            const response = await fetch(`http://localhost:3010/books?subjects_like=${subject}`);
+            const book = await response.json();
+            book.map(data => { createBook(data.title); });
+        });
+    }
+    function createBook(title) {
+        const body = document.querySelector('body');
+        const book = document.createElement('div');
+        book.innerText = title;
+        body.appendChild(book);
+    }
+    getBooks();
+
+    // fetch('http://localhost:3010/subjects')
+    //     .then(response => response.json())
+    //     .then(subjects => {
+    //         return Promise.all(subjects.map((subject) => fetch(`http://localhost:3010/books?subjects_like=${subject}`)));
+    //     })
+    //     .then(responses => {
+    //         return Promise.all(responses.map((response) => response.json()));
+    //     })
+    //     .then(results => {
+    //         results.flatMap(e => e).forEach(book => {
+    //             outputResult(book);
+    //         });
+    //
+    //     })
+    //     .catch(err => console.log('Error message:', err));
+</script>
+</body>
+</html>

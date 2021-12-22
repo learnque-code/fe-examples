@@ -1,0 +1,19 @@
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    background-color: hsl(200, 80%, 30%);
+    background-image: radial-gradient(hsl(200, 80%, 30%), hsl(210, 80%, 20%));
+    color: white;
+    font-family: Raleway, Helvetica, Arial, sans-serif;
+    line-height: 1.4;
+    min-height: 100vh;
+    margin: 0;
+}

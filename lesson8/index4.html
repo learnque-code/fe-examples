@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+
+        :root {
+            font-size: 12px;
+        }
+
+
+        .box {
+            color: blue;
+            padding: 2rem;
+            border: 2px solid black;
+            font-weight: bolder;
+            font-family: fantasy, sans-serif;
+        }
+
+        .box > * {
+            border: inherit;
+            padding: 2em;
+        }
+
+        .box :not(:last-child) {
+            margin-bottom: 2px;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    Box text
+    <div class="item">Item 1 text</div>
+    <div class="item">Item 2 text</div>
+    <div class="item">Item 3 text</div>
+    <div class="item">Item 4 text</div>
+</div>
+</body>
+</html>

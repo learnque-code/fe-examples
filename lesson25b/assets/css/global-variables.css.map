@@ -1,0 +1,12 @@
+{
+	"version": 3,
+	"file": "global-variables.css",
+	"sources": [
+		"../../scss/global-variables.scss"
+	],
+	"sourcesContent": [
+		"$my-duper-color: #fff;\n"
+	],
+	"names": [],
+	"mappings": ""
+}

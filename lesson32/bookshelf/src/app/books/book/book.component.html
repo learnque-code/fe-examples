@@ -1,0 +1,42 @@
+<div [ngSwitch]="!!book">
+  <div class="book" *ngSwitchCase="true">
+    <div class="row">
+      <div class="col-sm-8"><b>{{book.title}}</b> - ({{book.languages}})</div>
+      <div class="col-sm-4">
+        <b>Categories:</b>
+        <ul>
+          <li *ngFor="let subject of book.subjects">{{subject}}</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-8">
+        <b>Authors</b>
+        <ul>
+          <li *ngFor="let author of book.authors">{{author.name}}</li>
+        </ul>
+      </div>
+      <div class="col-sm-4">
+        <b>Shelves:</b>
+        <ul>
+          <li *ngFor="let shelve of book.bookshelves">{{shelve}}</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-sm-12">
+        Downloaded <b>{{book.download_count}}</b> times.
+        <ul>
+          <li *ngFor="let item of book.formats|keyvalue">
+            <b>{{item.key}}</b> - <a href="{{item.value}}" target="_blank" rel="noopener noreferrer">{{item.value}}</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="alert-warning"  *ngSwitchCase="false">
+    Please select a category from dropdown and later a book from table.
+  </div>
+</div>

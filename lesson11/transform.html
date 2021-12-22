@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Transform with perspective</title>
+    <style>
+        .row {
+            display: flex;
+            justify-content: center;
+        }
+
+        .row--perspective {
+            perspective: 200px;
+        }
+
+        .row--origin {
+            perspective-origin: left bottom
+        }
+
+        .box {
+            box-sizing: border-box;
+            width: 150px;
+            margin: 0 2em;
+            padding: 60px 0;
+            text-align: center;
+            background-color: hsl(150, 50%, 40%);
+        }
+
+        .box--perspective-rotatex {
+            transform: perspective(200px) rotateX(30deg);
+        }
+
+        .box--rotatex {
+            transform: rotateX(30deg);
+        }
+
+    </style>
+</head>
+<body>
+<div class="row row--origin">
+    <div class="box box--perspective-rotatex">One</div>
+    <div class="box box--perspective-rotatex">Two</div>
+    <div class="box box--perspective-rotatex">Three</div>
+    <div class="box box--perspective-rotatex">Four</div>
+</div>
+</body>
+</html>

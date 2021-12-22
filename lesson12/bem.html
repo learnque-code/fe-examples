@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BEM</title>
+    <style>
+        .card {
+            padding: 20px;
+        }
+
+        .card__title {
+            color: brown;
+        }
+
+        .card__content {
+            color: #26ff00;
+        }
+
+        .card__content--attention {
+            text-decoration: underline;
+        }
+
+        .card__title--big {
+            font-size: 42px;
+        }
+
+        .card__title--small {
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+<div class="row">
+    <div class="card">
+        <h1 class="card__title card__title--big">Title</h1>
+        <p class="card__content">Content</p>
+    </div>
+
+    <div class="card">
+        <h1 class="card__title card__title--small">Title</h1>
+        <p class="card__content card__content--attention">Content</p>
+    </div>
+</div>
+
+</body>
+</html>

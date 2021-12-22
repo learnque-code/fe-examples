@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Formos</title>
+    </head>
+    <body>
+        <form action="index.html" method="GET">
+            <fieldset>
+                <label for="name">Vardas:</label>
+            <input type="password" id="name" name="name" pattern="[A-Z][][0-9]+" minlength="4" maxlength="10"
+            <br />
+            <label for="option-1">Vyras
+                <input type="radio" name="set-of-options" id="option-1" value="male" checked>
+            </label>
+            </fieldset>
+            
+            <br />
+            <label for="option-2">Moteris
+                <input type="radio" name="set-of-options" 
+                id="option-2"
+                value="female"
+                >
+            </label>
+            <br />
+            <label for="cheese">
+                <input type="checkbox" id="cheese" name="list[]" value="cheese"> Suris
+            </label>
+            <label for="milk">
+                <input type="checkbox" id="milk"name="list[]" value="milk"
+                > Pienas
+            </label>
+            <br />
+            <label for="some-select">A dropdown</label>
+            <select id="some-select" name="selection[]" multiple>
+                <option value="1">Option 1</option>
+                <option value="2" selected>Option 2</option>
+                <option value="3" disabled>Option 3</option>
+            </select>
+            <br />
+            <br />
+            <label for="password">Slaptazodis</label>
+            <input id="password" type="password" placeholder="Ivesk slaptazodi" />
+            <br />
+            <input type="number" required min="5" max="6" />
+            <br />
+            <input type="email" />
+            
+            
+            <br />
+            <br />
+
+            <input type="file" />
+
+            <textarea rows="4" cols="50">
+                This is a sample text designed to show how the text
+                would all fit in the large textbox.
+            </textarea>
+            
+            <input type="submit" value="Pateikti" />
+            
+        </form>
+        
+    </body>
+</html>

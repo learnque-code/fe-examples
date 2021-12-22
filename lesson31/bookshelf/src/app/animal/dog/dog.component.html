@@ -1,0 +1,25 @@
+<div [ngSwitch]="dogs.length > 0">
+  <div *ngSwitchCase="true">Dog names:<br>
+    <ul>
+      <img
+        [alt]="dog.id"
+        *ngFor="let dog of dogs"
+        (click)="onDogClick($event, dog)"
+        [src]="dog.url" [width]="dog.width"
+        [height]="dog.height"
+        [style]="randomStyle()"
+      />
+<!--        {{dog.name | uppercase}}{{!!dog.age ? ' ' + (dog.age | percent) : ''}} - {{ !!dog.masters ? (dog.masters | joinmasters: '; ' | uppercase) : 'N/A' }}-->
+    </ul>
+  </div>
+  <div *ngSwitchDefault>Dogs names loading...</div>
+</div>
+
+<!--<div [ngSwitch]="!!dogsBehaviours">-->
+<!--  <div *ngSwitchCase="true">Dog behaviours:<br>-->
+<!--    <ul>-->
+<!--      <li *ngFor="let item of dogsBehaviours | keyvalue">{{item.key}} - {{item.value}}</li>-->
+<!--    </ul>-->
+<!--  </div>-->
+<!--  <div *ngSwitchDefault>Dogs behaviours loading...</div>-->
+<!--</div>-->
